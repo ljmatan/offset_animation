@@ -15,18 +15,18 @@ class ObjectMesaurements {
   );
 }
 
-class DragDetector extends StatefulWidget {
+class ButtonWrapper extends StatefulWidget {
   final Function(ObjectMesaurements) addToList;
 
-  DragDetector({@required this.addToList});
+  ButtonWrapper({@required this.addToList});
 
   @override
   State<StatefulWidget> createState() {
-    return _DragDetectorState();
+    return _ButtonWrapperState();
   }
 }
 
-class _DragDetectorState extends State<DragDetector> {
+class _ButtonWrapperState extends State<ButtonWrapper> {
   // Key used to access widget size and offset
   final GlobalKey _key = GlobalKey();
 
@@ -104,19 +104,19 @@ class _DemoState extends State<Demo> {
           children: [
             Positioned(
               bottom: 20,
-              child: DragDetector(addToList: _addButtonLocation),
+              child: ButtonWrapper(addToList: _addButtonLocation),
             ),
             Positioned(
               bottom: 60,
               right: 20,
-              child: DragDetector(addToList: _addButtonLocation),
+              child: ButtonWrapper(addToList: _addButtonLocation),
             ),
             Positioned(
               left: 60,
               top: 120,
-              child: DragDetector(addToList: _addButtonLocation),
+              child: ButtonWrapper(addToList: _addButtonLocation),
             ),
-            Center(child: DragDetector(addToList: _addButtonLocation)),
+            Center(child: ButtonWrapper(addToList: _addButtonLocation)),
             MovingObjects(),
             Container(color: Colors.transparent),
           ],
